@@ -51,6 +51,7 @@ h1 p {
 }
 .container {
 	margin: 0 auto;
+	padding-top: 3.28rem;
 	max-width: 144rem;
 	display: flex;
 	flex-direction: column;
@@ -64,9 +65,19 @@ h1 p {
 	background-color: var(--very-dark-blue-card);
 	width: 22.5rem;
 	height: 37.5rem;
+	box-shadow: 0px 15px 15px 5px rgba(0,0,0,0.85);
+	border-radius: 1em;
 }
 .card-description h1 {
 	padding-top: 1.687rem;
+}
+.card-description h1 a{
+	font-family: 'Outfit-SemiBold', sans-serif;
+	text-decoration: none;
+	color: var(--white);
+}
+.card-description h1 a:hover {
+	color: var(--cyan);
 }
 .card-description p{
 	font-family: 'Outfit-Light', sans-serif;
@@ -105,12 +116,30 @@ h1 p {
 	color: var(--soft-blue);
 }
 .box-img {
+	position: relative;
 	width: 18.75rem;
 	height: 18.44rem;
-	padding-top: 1.5rem;
+	margin-top: 1.5rem;
+	box-shadow: 0px 9px 20px 2px rgba(0,0,0,0.43);
+	border-radius: 1em;
+}
+.box-img:hover::before{
+	content: '';
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	bottom: 0;
+	left: 0;
+	border-radius: 1em;
+	background-color: hsl(178deg 100% 50% / 40%);
+	background-image: url(./img/icon-view.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 img {
 	width: 100%;
+	height: inherit;
+	border-radius: 1em;
 }
 .card-autor {
 	padding-top: 1.5rem;
@@ -121,16 +150,23 @@ img {
 	width: 1.87rem;
 	height: 1.87rem;
 	margin-right: 0.9rem;
+	border: 1px var(--white) solid;
+	border-radius: 50%;
 }
 .autor-info {
 	font-size: 0.956rem;
 	color: var(--soft-blue);
 }
-.autor-info :first-child {
+.autor-info :first-child a {
 	color: var(--white);
+	text-decoration: none;
+}
+.autor-info :first-child a:hover {
+	color: var(--cyan);
 }
 .attribution {
 	text-align: center;
+	margin-top: 2rem;
 }
 @media (max-width: 25rem) {
 	.container {

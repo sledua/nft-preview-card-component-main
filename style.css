@@ -2,11 +2,142 @@ html * {
 	margin: 0;
 	padding: 0;
 }
+:root {
+	/** color primary **/
+	--soft-blue : hsl(215, 51%, 70%);
+	--cyan : hsl(178, 100%, 50%);
+	/** color neutral**/
+	--very-dark-blue : hsl(217, 54%, 11%);
+	--very-dark-blue-card : hsl(216, 50%, 16%);
+	--very-dark-blue-line : hsl(215, 32%, 27%);
+	/** color diff**/
+	--white: hsl(0, 0%, 100%);
+}
+@font-face {
+	font-family: 'Outfit-Light';
+	src: url('./fonts/Outfit/Outfit-Light.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'Outfit-Regular';
+	src: url('./fonts/Outfit/Outfit-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Outfit-SemiBold';
+	src: url('./fonts/Outfit/Outfit-SemiBold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 600;
+}
 body {
 	overflow-x: hidden;
-	font-size: 10px;
+	font-family: 'Outfit-Regular', sans-serif;
+	font-size: 10px; 
+	color: var(--white);
+	background-color: var(--very-dark-blue);
+	height: 100vh;
 }
-h1 h2 h3 p {
+p {
+	font-size: 1.125rem;
+}
+h1 {
+	font-size: 1.2rem;
+}
+h1 p {
 	margin: 0;
 	padding: 0;
+}
+.container {
+	margin: 0 auto;
+	max-width: 144rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--very-dark-blue-card);
+	width: 22.5rem;
+	height: 37.5rem;
+}
+.card-description h1 {
+	padding-top: 1.687rem;
+}
+.card-description p{
+	font-family: 'Outfit-Light', sans-serif;
+	color: var(--soft-blue);
+	width: 18.75rem;
+	padding-top: 1.25rem;
+}
+.card-description-info {
+	padding-top: 1.25rem;
+	padding-bottom: 1.375rem;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px var(--very-dark-blue-line) solid;
+}
+.card-description-info .price {
+	display: flex;
+	align-items: center;
+}
+.card-description-info .price :first-child {
+	height: 1.125rem;
+	width: 0.937rem;
+	margin-right: 0.345rem;
+}
+.card-description-info .price :last-child {
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	color: var(--cyan);
+}
+.card-description-info .time :first-child {
+	height: 1.125rem;
+	width: 1.125rem;
+	margin-right: 0.245rem;
+}
+.card-description-info .time :last-child {
+	font-size: 1.2rem;
+	color: var(--soft-blue);
+}
+.box-img {
+	width: 18.75rem;
+	height: 18.44rem;
+	padding-top: 1.5rem;
+}
+img {
+	width: 100%;
+}
+.card-autor {
+	padding-top: 1.5rem;
+	display: flex;
+	align-items: center;
+}
+.avatar-box {
+	width: 1.87rem;
+	height: 1.87rem;
+	margin-right: 0.9rem;
+}
+.autor-info {
+	font-size: 0.956rem;
+	color: var(--soft-blue);
+}
+.autor-info :first-child {
+	color: var(--white);
+}
+.attribution {
+	text-align: center;
+}
+@media (max-width: 25rem) {
+	.container {
+		width: 37.5rem;
+	}
+	.card {
+		width: 18.75rem;
+		height: 37.5rem;
+	}
 }
